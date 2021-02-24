@@ -22,18 +22,11 @@ namespace MegadeskWebApp.Pages.DeskQuotes
 
         public IActionResult OnGet()
         {
+            Materials = new SelectList(Enum.GetNames(typeof(surface)));
             return Page();
         }
 
-        [BindProperty]
-        public DeskQuote DeskQuote { get; set; }
-        public decimal calculateQuote()
-        {
-            decimal rushcost = 0;
-            surface materialcost = ((surface)Enum.Parse(typeof(surface), DeskQuote.SurfaceMaterial));
-            decimal total = ((200 + DeskQuote.Width * DeskQuote.Depth) + DeskQuote.NumDrawers * 50 + (decimal)materialcost + rushcost);
-            return total;
-        }
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -46,6 +39,18 @@ namespace MegadeskWebApp.Pages.DeskQuotes
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+        [BindProperty]
+        public DeskQuote DeskQuote { get; set; }
+
+        public SelectList Materials { get; set; }
+
+        public decimal calculateQuote()
+        {
+            decimal rushcost = 0;
+            surface materialcost = ((surface)Enum.Parse(typeof(surface), DeskQuote.SurfaceMaterial));
+            decimal total = ((200 + DeskQuote.Width * DeskQuote.Depth) + DeskQuote.NumDrawers * 50 + (decimal)materialcost + rushcost);
+            return total;
         }
     }
 }
