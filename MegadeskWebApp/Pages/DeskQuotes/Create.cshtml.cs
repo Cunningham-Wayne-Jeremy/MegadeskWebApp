@@ -12,6 +12,7 @@ namespace MegadeskWebApp.Pages.DeskQuotes
 {
     public class CreateModel : PageModel
     {
+        public enum surface { Oak = 200, Laminate = 100, Pine = 50, Rosewood = 300, Veneer = 125 };
         private readonly MegadeskWebApp.Data.MegadeskWebAppContext _context;
 
         public CreateModel(MegadeskWebApp.Data.MegadeskWebAppContext context)
@@ -33,7 +34,10 @@ namespace MegadeskWebApp.Pages.DeskQuotes
             {
                 return Page();
             }
+            surface materialcost = ((surface)Enum.Parse(typeof(surface), DeskQuote.SurfaceMaterial));
+            decimal rushcost = 0;
 
+        DeskQuote.Total = ((200 + DeskQuote.Width * DeskQuote.Depth) + DeskQuote.NumDrawers * 50 + (decimal)materialcost + rushcost);
             _context.DeskQuote.Add(DeskQuote);
             await _context.SaveChangesAsync();
 
