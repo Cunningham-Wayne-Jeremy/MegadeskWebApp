@@ -27,17 +27,21 @@ namespace MegadeskWebApp.Pages.DeskQuotes
 
         [BindProperty]
         public DeskQuote DeskQuote { get; set; }
-
+        public decimal calculateQuote()
+        {
+            decimal rushcost = 0;
+            surface materialcost = ((surface)Enum.Parse(typeof(surface), DeskQuote.SurfaceMaterial));
+            decimal total = ((200 + DeskQuote.Width * DeskQuote.Depth) + DeskQuote.NumDrawers * 50 + (decimal)materialcost + rushcost);
+            return total;
+        }
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            surface materialcost = ((surface)Enum.Parse(typeof(surface), DeskQuote.SurfaceMaterial));
-            decimal rushcost = 0;
-
-        DeskQuote.Total = ((200 + DeskQuote.Width * DeskQuote.Depth) + DeskQuote.NumDrawers * 50 + (decimal)materialcost + rushcost);
+            
+            DeskQuote.Total = calculateQuote();
             _context.DeskQuote.Add(DeskQuote);
             await _context.SaveChangesAsync();
 
