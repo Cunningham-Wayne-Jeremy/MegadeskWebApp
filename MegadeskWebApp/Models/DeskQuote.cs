@@ -31,7 +31,7 @@ namespace MegadeskWebApp.Models
 
         [Display(Name = "Rush Days")]
         [RegularExpression(@"(3|5|7|14)")]
-        public decimal RushDays { get; set; }
+        public int RushDays { get; set; }
         [Display(Name = "Order Date")]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
