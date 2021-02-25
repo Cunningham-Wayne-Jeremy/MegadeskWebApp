@@ -10,11 +10,23 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form>
+    <p>
+        Search By Customer: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<p>
+    <a asp-page="./Index" role="button">Back to Full List</a>
+</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].FullName)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.CustomerSort">
+                    @Html.DisplayNameFor(model => model.DeskQuote[0].FullName)
+                </a> 
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].NumDrawers)
@@ -32,7 +44,10 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].RushDays)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Date)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort" class="light">
+                    @Html.DisplayNameFor(model => model.DeskQuote[0].Date)
+                </a>
+               
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Total)
