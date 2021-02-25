@@ -31,7 +31,7 @@ namespace MegadeskWebApp.Models
 
         [Display(Name = "Rush Days")]
         [Range(3, 14)]
-        public decimal RushDays { get; set; }
+        public int RushDays { get; set; }
 
         [Display(Name = "Order Date")]
         [DataType(DataType.Date)]
