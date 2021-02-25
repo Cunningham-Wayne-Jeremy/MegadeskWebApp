@@ -35,7 +35,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.SurfaceMaterial" class="control-label"></label>
-                <input asp-for="DeskQuote.SurfaceMaterial" class="form-control" />
+                <br />  
+                <select asp-for="DeskQuote.SurfaceMaterial" asp-items="Model.Materials">
+                    <option value=""></option>
+                </select>
                 <span asp-validation-for="DeskQuote.SurfaceMaterial" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -48,11 +51,11 @@
                 <input asp-for="DeskQuote.Date" class="form-control" />
                 <span asp-validation-for="DeskQuote.Date" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="DeskQuote.Total" class="control-label"></label>
                 <input asp-for="DeskQuote.Total" class="form-control" />
                 <span asp-validation-for="DeskQuote.Total" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
