@@ -11,7 +11,7 @@ namespace MegadeskWebApp.Models
         public int ID { get; set; }
 
         [Display(Name = "Customer Name")]
-        [RegularExpression(@"^[\\p{L} .'-]+$")]
+        [RegularExpression(@"^[A-Z ]+[a-zA-Z ]*$")]
         [Required]
         [StringLength(30)]
         public string FullName { get; set; }
@@ -30,9 +30,8 @@ namespace MegadeskWebApp.Models
         public string SurfaceMaterial { get; set; }
 
         [Display(Name = "Rush Days")]
-        [Range(3, 14)]
-        public int RushDays { get; set; }
-
+        [RegularExpression(@"(3|5|7|14)")]
+        public decimal RushDays { get; set; }
         [Display(Name = "Order Date")]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
