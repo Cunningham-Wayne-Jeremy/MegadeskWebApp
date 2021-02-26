@@ -47,9 +47,72 @@ namespace MegadeskWebApp.Pages.DeskQuotes
 
         public decimal calculateQuote()
         {
+
             decimal rushcost = 0;
+
+            if (DeskQuote.Width * DeskQuote.Depth < 1000)
+            {
+                switch (DeskQuote.RushDays)
+                {
+                    case 3:
+                        rushcost = 60;
+                        break;
+                    case 5:
+                        rushcost = 40;
+                        break;
+                    case 7:
+                        rushcost = 30;
+                        break;
+                    default:
+                        break;
+                }
+            } else if (DeskQuote.Width * DeskQuote.Depth >= 1000 && DeskQuote.Width * DeskQuote.Depth <= 2000)
+            {
+                switch (DeskQuote.RushDays)
+                {
+                    case 3:
+                        rushcost = 70;
+                        break;
+                    case 5:
+                        rushcost = 50;
+                        break;
+                    case 7:
+                        rushcost = 35;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (DeskQuote.Width * DeskQuote.Depth > 2000)
+            {
+                switch (DeskQuote.RushDays)
+                {
+                    case 3:
+                        rushcost = 80;
+                        break;
+                    case 5:
+                        rushcost = 60;
+                        break;
+                    case 7:
+                        rushcost = 45;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            decimal baseprice = 0;
+
+            if(DeskQuote.Width * DeskQuote.Depth > 1000)
+            {
+                baseprice = 200 + DeskQuote.Width * DeskQuote.Depth;
+            } else
+            {
+                baseprice = 200;
+            }
+
             surface materialcost = ((surface)Enum.Parse(typeof(surface), DeskQuote.SurfaceMaterial));
-            decimal total = ((200 + DeskQuote.Width * DeskQuote.Depth) + DeskQuote.NumDrawers * 50 + (decimal)materialcost + rushcost);
+            decimal total = (baseprice + DeskQuote.NumDrawers * 50 + (decimal)materialcost + rushcost);
             return total;
         }
     }

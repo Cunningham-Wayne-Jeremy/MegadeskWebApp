@@ -5,12 +5,119 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  font-family: Lato;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 body {
   margin: 0;
+}
+
+.flex {
+    display: flex;
+    align-content: center;
+    height: 100px;
+    justify-content: center;
+}
+table {
+    border-collapse: collapse;
+    margin: 25px 0px;
+    font-size: 1.2em;
+    font-family: Lato;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+thead tr {
+    background-color: #98c1d9;
+    color: #ffffff;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+}
+
+td {
+    background-color: white;
+    text-align: center;
+}
+
+tbody tr {
+    border-bottom: 1px solid black;
+}
+input[type=submit] {
+    padding: 15px;
+    margin-top: 20px;
+    width: 150px;
+    border-radius: 1em;
+    border: none;
+    text-decoration: none;
+    font-family: Lato;
+    color: #FFFFFF;
+    background-color: #ee6c4d;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+
+    input[type=submit]:hover {
+        background-color: #777777;
+    }
+
+input[type=text], input[type=number], input[type=date] {
+    min-width: 300px;
+    padding: 10px 5px;
+    border: 1px solid #337ab7;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.button-link {
+    padding: 15px;
+    margin-top: 20px;
+    width: 200px;
+    border-radius: 1em;
+    border: none;
+    text-decoration: none;
+    font-family: Lato;
+    color: #FFFFFF;
+    background-color: #293241;
+    text-align: center;
+}
+
+.button-table {
+    padding: 8px;
+    margin-top: 20px;
+    border: none;
+    text-decoration: none;
+    font-family: Lato;
+    color: #FFFFFF;
+    background-color: #293241;
+    text-align: center;
+}
+
+.button-style {
+    color: #fff;
+
+}
+
+.left-margin {
+    margin-left: 10px;
+}
+
+.create-flex {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+.special-link {
+    color: #3d5a80;
+}
+
+.special-link:hover {
+    color: #777777;
 }
 article,
 aside,
@@ -60,6 +167,7 @@ b,
 strong {
   font-weight: bold;
 }
+
 dfn {
   font-style: italic;
 }
@@ -1082,7 +1190,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Lato;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -1099,11 +1207,13 @@ textarea {
 a {
   color: #337ab7;
   text-decoration: none;
+
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #fff;
   text-decoration: underline;
+
 }
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
@@ -1171,6 +1281,9 @@ hr {
 [role="button"] {
   cursor: pointer;
 }
+.pink {
+    color: #ee6c4d;
+}
 h1,
 h2,
 h3,
@@ -1183,9 +1296,8 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: Lora;
   font-weight: 500;
-  line-height: 1.1;
   color: inherit;
 }
 h1 small,
@@ -1215,6 +1327,12 @@ h6 .small,
   font-weight: 400;
   line-height: 1;
   color: #777777;
+}
+.white {
+    color: #fff;
+}
+.no-hover:hover {
+    font-size: 
 }
 h1,
 .h1,
@@ -2369,11 +2487,11 @@ caption {
 th {
   text-align: left;
 }
-.table {
+/*.table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 20px;
-}
+}*/
 .table > thead > tr > th,
 .table > tbody > tr > th,
 .table > tfoot > tr > th,
@@ -3158,9 +3276,10 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: #333;
-  background-color: #fff;
-  border-color: #ccc;
+  color: #fff;
+  background-color: #EE6c4d;
+  border-color: #000;
+  font-family: Lato;
 }
 .btn-default:focus,
 .btn-default.focus {
@@ -4353,6 +4472,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
+  font-family: Lora;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4430,7 +4550,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-nav {
     float: left;
-    margin: 0;
+    margin: 22px;
   }
   .navbar-nav > li {
     float: left;
@@ -4665,34 +4785,34 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
-  border-color: #080808;
+  background-color: #3D5A80;
+  border-color: #293241;
 }
 .navbar-inverse .navbar-brand {
-  color: #9d9d9d;
+  color: #fff;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #fff;
+  color: #E0fbfc;
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
-  color: #9d9d9d;
+  color: #fff;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #9d9d9d;
-}
-.navbar-inverse .navbar-nav > li > a:hover,
-.navbar-inverse .navbar-nav > li > a:focus {
   color: #fff;
-  background-color: transparent;
 }
-.navbar-inverse .navbar-nav > .active > a,
-.navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active > a:focus {
-  color: #fff;
-  background-color: #080808;
-}
+    .navbar-inverse .navbar-nav > li > a:hover,
+    .navbar-inverse .navbar-nav > li > a:focus {
+        color: #E0fbfc;
+        background-color: transparent;
+    }
+    .navbar-inverse .navbar-nav > .active > a,
+    .navbar-inverse .navbar-nav > .active > a:hover,
+    .navbar-inverse .navbar-nav > .active > a:focus {
+        color: #E0fbfc;
+        background-color: #080808;
+    }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
 .navbar-inverse .navbar-nav > .disabled > a:focus {
@@ -6069,7 +6189,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Lato;
   font-style: normal;
   font-weight: 400;
   line-height: 1.42857143;
@@ -6187,7 +6307,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Lato;
   font-style: normal;
   font-weight: 400;
   line-height: 1.42857143;
@@ -6455,7 +6575,7 @@ button.close {
 .carousel-control .icon-next {
   width: 20px;
   height: 20px;
-  font-family: serif;
+  font-family: Lora;
   line-height: 1;
 }
 .carousel-control .icon-prev:before {
@@ -6503,7 +6623,8 @@ button.close {
   padding-bottom: 20px;
   color: #fff;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+ 
 }
 .carousel-caption .btn {
   text-shadow: none;

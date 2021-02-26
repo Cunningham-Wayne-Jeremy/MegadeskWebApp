@@ -5,9 +5,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h2>Add</h2>
 
-<h4>DeskQuote</h4>
+<h4>New Quote</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -43,7 +43,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.RushDays" class="control-label"></label>
-                <input placeholder="Enter 3|5|7|14" asp-for="DeskQuote.RushDays" class="form-control" />
+                <select placeholder="Enter 3|5|7|14" asp-for="DeskQuote.RushDays">
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="7">7</option>
+                    <option value="4">14</option>
+                </select>
+                
+                
                 <span asp-validation-for="DeskQuote.RushDays" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -56,16 +63,18 @@
                 <input asp-for="DeskQuote.Total" class="form-control" />
                 <span asp-validation-for="DeskQuote.Total" class="text-danger"></span>
             </div>*@
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+        <div class="form-group create-flex">
+            <input type="submit" value="Create" class="" />
+            <hr width="1" size="500">
+            <div class="button-link">
+                <a class="button-link" asp-page="Index">&#8678; Back to List</a>
             </div>
+        </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

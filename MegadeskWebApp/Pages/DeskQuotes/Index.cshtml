@@ -5,21 +5,26 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>All Quotes</h2>
 
-<p>
-    <a asp-page="Create">Create New</a>
+<p class="button-link">
+    <a class="button-style"  asp-page="Create">+ Create New Quote</a>
 </p>
 
-<form>
-    <p>
-        Search By Customer: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
-</form>
-<p>
-    <a asp-page="./Index" role="button">Back to Full List</a>
+<div class="create-flex">
+
+    <form>
+        <p>
+            <input type="text" asp-for="SearchString" placeholder="Search By Customer:" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+</div>
+
+<p class="special-link">
+    <a class="special-link" asp-page="./Index" role="button">BACK TO FULL LIST</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -83,9 +88,9 @@
                 @Html.DisplayFor(modelItem => item.Total)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a class="button-table" asp-page="./Edit" asp-route-id="@item.ID">&#9998; Edit</a> |
+                <a class="button-table" asp-page="./Details" asp-route-id="@item.ID">&#x2637; Details</a> |
+                <a class="button-table" asp-page="./Delete" asp-route-id="@item.ID">&#10006; Delete</a>
             </td>
         </tr>
 }

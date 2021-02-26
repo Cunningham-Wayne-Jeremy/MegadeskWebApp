@@ -12,7 +12,7 @@ namespace MegadeskWebApp.Pages
 
         public void OnGet()
         {
-            Message = "Your application description page.";
+            Message = "Only the deskiest will survive.";
         }
     }
 }
