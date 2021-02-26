@@ -8,6 +8,8 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lora:wght@700&display=swap" rel="stylesheet">
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -17,6 +19,9 @@
     </environment>
 </head>
 <body>
+    <header class="flex">
+        
+    </header>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -26,14 +31,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-page="/Index" class="navbar-brand">MegadeskWebApp</a>
+                <a class="flex white no-hover" asp-page="/Index" class="navbar-brand">
+                    <img src="~/images/MegaDesk.png" alt="a very strong desk" />
+                    <h1>Lars's Best <span class="pink">Megadesk</span></h1>
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="DeskQuotes/Index">View Quotes</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
+                
+                    <li><a asp-page="DeskQuotes/Index">VIEW QUOTES</a></li>
+                    <li><a asp-page="/About">ABOUT</a></li>
+                    <li><a asp-page="/Contact">CONTACT</a></li>
                 </ul>
             </div>
         </div>

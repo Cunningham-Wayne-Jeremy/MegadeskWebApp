@@ -12,7 +12,7 @@ namespace MegadeskWebApp.Pages
 
         public void OnGet()
         {
-            Message = "Your contact page.";
+            Message = "If you need something besides THE BEST DESK OF YOUR LIFE:";
         }
     }
 }
