@@ -5,21 +5,25 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>All Quotes</h2>
 
-<p>
-    <a asp-page="Create">Create New</a>
+<p class="button-link">
+    <a class="button-style"  asp-page="Create">+ Create New Quote</a>
 </p>
 
-<form>
-    <p>
-        Search By Customer: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
+<div class="create-flex">
+
+    <form>
+        <p>
+            <input type="text" asp-for="SearchString" placeholder="Search By Customer:" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+    <p class="special-link">
+        <a class="special-link" asp-page="./Index" role="button">Back to Full List</a>
     </p>
-</form>
-<p>
-    <a asp-page="./Index" role="button">Back to Full List</a>
-</p>
+</div>
+
 <table class="table">
     <thead>
         <tr>
