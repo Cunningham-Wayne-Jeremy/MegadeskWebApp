@@ -43,7 +43,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.RushDays" class="control-label"></label>
-                <input placeholder="Enter 3|5|7|14" asp-for="DeskQuote.RushDays" class="form-control" />
+                <select placeholder="Enter 3|5|7|14" asp-for="DeskQuote.RushDays">
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="7">7</option>
+                    <option value="4">14</option>
+                </select>
+                
+                
                 <span asp-validation-for="DeskQuote.RushDays" class="text-danger"></span>
             </div>
             <div class="form-group">
