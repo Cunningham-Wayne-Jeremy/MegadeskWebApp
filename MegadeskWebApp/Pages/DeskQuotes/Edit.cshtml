@@ -61,11 +61,11 @@
                 <input id="surface-input-text" placeholder="Please choose from the Images below" asp-for="DeskQuote.SurfaceMaterial" class="form-control" />
                 <table>
                     <tr>
-                        <td><a onclick="settolaminate()" href="#/" id="laminate"><img src="~/images/laminate.jpg" width="80" height="80">Laminate</a></td>
-                        <td><a onclick="settopine()" href="#/" id="pine"><img src="~/images/pine.jpg" width="80" height="80">Pine</a></td>
-                        <td><a onclick="settoveneer()" href="#/" id="veneer"><img src="~/images/veneer.jpg" width="80" height="80">Veneer</a></td>
-                        <td><a onclick="settooak()" href="#/" id="oak"><img src="~/images/oak.jpg" width="80" height="80">Oak</a></td>
-                        <td><a onclick="settorosewood()" href="#/" id="rosewood"><img src="~/images/rosewood.jpg" width="80" height="80">Rosewood</a></td>
+                        <td class="surface-material-select"><a class="special-link" onclick="settolaminate()" href="#/" id="laminate"><img src="~/images/laminate.jpg" width="80" height="80">Laminate</a></td>
+                        <td class="surface-material-select"><a class="special-link" onclick="settopine()" href="#/" id="pine"><img src="~/images/pine.jpg" width="80" height="80">Pine</a></td>
+                        <td class="surface-material-select"><a class="special-link" onclick="settoveneer()" href="#/" id="veneer"><img src="~/images/veneer.jpg" width="80" height="80">Veneer</a></td>
+                        <td class="surface-material-select"><a class="special-link" onclick="settooak()" href="#/" id="oak"><img src="~/images/oak.jpg" width="80" height="80">Oak</a></td>
+                        <td class="surface-material-select"><a class="special-link" onclick="settorosewood()" href="#/" id="rosewood"><img src="~/images/rosewood.jpg" width="80" height="80">Rosewood</a></td>
                     </tr>
                 </table>
                 <span asp-validation-for="DeskQuote.SurfaceMaterial" class="text-danger"></span>
