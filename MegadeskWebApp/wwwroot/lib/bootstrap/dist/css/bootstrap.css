@@ -22,9 +22,11 @@ body {
 table {
     border-collapse: collapse;
     margin: 25px 0px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-family: Lato;
-    min-width: 150px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
 }
 
 thead tr {
@@ -39,13 +41,14 @@ th, td {
 
 td {
     background-color: white;
+    text-align: center;
 }
 
 tbody tr {
     border-bottom: 1px solid black;
 }
 input[type=submit] {
-    padding: 8px;
+    padding: 15px;
     margin-top: 20px;
     width: 150px;
     border-radius: 1em;
@@ -60,7 +63,7 @@ input[type=submit] {
 
 
     input[type=submit]:hover {
-        background-color: #403d39ff;
+        background-color: #777777;
     }
 
 input[type=text], input[type=number], input[type=date] {
@@ -84,9 +87,24 @@ input[type=text], input[type=number], input[type=date] {
     text-align: center;
 }
 
+.button-table {
+    padding: 8px;
+    margin-top: 20px;
+    border: none;
+    text-decoration: none;
+    font-family: Lato;
+    color: #FFFFFF;
+    background-color: #293241;
+    text-align: center;
+}
+
 .button-style {
     color: #fff;
 
+}
+
+.left-margin {
+    margin-left: 10px;
 }
 
 .create-flex {
@@ -95,7 +113,6 @@ input[type=text], input[type=number], input[type=date] {
     align-items: center;
 }
 .special-link {
-    margin: 20px;
     color: #3d5a80;
 }
 
@@ -2470,11 +2487,11 @@ caption {
 th {
   text-align: left;
 }
-.table {
+/*.table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 20px;
-}
+}*/
 .table > thead > tr > th,
 .table > tbody > tr > th,
 .table > tfoot > tr > th,
