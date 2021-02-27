@@ -47,6 +47,15 @@ td {
 tbody tr {
     border-bottom: 1px solid black;
 }
+
+.surface-material-select {
+    padding: 8px;
+}
+
+.surface-material-select:hover {
+    border: 3px solid #337ab7;
+}
+
 input[type=submit] {
     padding: 15px;
     margin-top: 20px;
@@ -66,7 +75,7 @@ input[type=submit] {
         background-color: #777777;
     }
 
-input[type=text], input[type=number], input[type=date] {
+input[type=text], input[type=number], input[type=date], select {
     min-width: 300px;
     padding: 10px 5px;
     border: 1px solid #337ab7;
@@ -119,6 +128,10 @@ input[type=text], input[type=number], input[type=date] {
 .special-link:hover {
     color: #777777;
 }
+
+    .special-link:visited {
+        color: #3d5a80;
+    }
 article,
 aside,
 details,
